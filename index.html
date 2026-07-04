@@ -43,6 +43,87 @@ body { background: var(--bg); color: var(--text); font-family: "Libre Baskervill
 .hero p { max-width: 700px; margin: 20px auto; color: var(--silver); line-height: 1.8; }
 .banner { font-size: 2rem; color: var(--gold2); margin-bottom: 20px; letter-spacing: 0.05em; }
 
+/* FEATURED (Razed) */
+.featured-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 10px;
+}
+.featured-card {
+  background: linear-gradient(135deg, #1a1200 0%, #101010 60%);
+  border: 2px solid var(--gold2);
+  border-radius: 8px;
+  padding: 35px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.featured-card::before {
+  content: '★ FEATURED ★';
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--gold2);
+  opacity: 0.7;
+}
+.featured-left h2 {
+  font-size: 2rem;
+  color: var(--gold2);
+  margin-bottom: 6px;
+}
+.featured-left p {
+  color: var(--silver);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 500px;
+}
+.featured-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 200px;
+}
+.code-box {
+  background: #000;
+  border: 1px solid var(--gold);
+  padding: 10px 28px;
+  text-align: center;
+  width: 100%;
+}
+.code-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--silver);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.code-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.15em;
+}
+.featured-card a.btn-featured {
+  display: block;
+  text-align: center;
+  padding: 16px 32px;
+  background: var(--gold2);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.featured-card a.btn-featured:hover { background: var(--gold); }
+  
 /* GRID */
 .grid {
   display: grid;
