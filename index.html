@@ -1,112 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>No Reservations At Dorsia</title>
 <style>
-:root{
---bg:#000000;
---card:#101010;
---gold:#c5a46d;
---gold2:#e4c989;
---silver:#a8a8a8;
---red:#7a0f12;
---text:#f2f2f2;
+:root {
+  --bg: #000000;
+  --card: #101010;
+  --gold: #c5a46d;
+  --gold2: #e4c989;
+  --silver: #a8a8a8;
+  --red: #7a0f12;
+  --text: #f2f2f2;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:"Libre Baskerville",sans-serif}
-#agegate{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:999}
-.gatebox{border:1px solid var(--gold);padding:40px;max-width:500px;text-align:center;background:#111}
-.btn{display:inline-block;padding:14px 24px;background:var(--gold);color:#000;text-decoration:none;border:none;cursor:pointer;margin:5px;font-weight:bold}
-.hero{text-align:center;padding:80px 20px}
-.hero h1{font-size:4rem;color:var(--gold)}
-.hero p{max-width:700px;margin:20px auto;color:var(--silver)}
-.banner{font-size:2rem;color:var(--gold2);margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1200px;margin:auto;padding:40px 20px}
-.card{background:var(--card);border:1px solid var(--gold);padding:25px;border-radius:8px;transition:.3s}
-.card:hover{transform:translateY(-4px)}
-.card h3{color:var(--gold2)}
-.card a{display:block;text-align:center;margin-top:15px}
-footer{text-align:center;padding:40px;color:var(--silver)}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: "Libre Baskerville", sans-serif; }
+
+/* AGE GATE */
+#agegate {
+  position: fixed; inset: 0; background: #000;
+  display: flex; align-items: center; justify-content: center; z-index: 999;
+}
+.gatebox {
+  border: 1px solid var(--gold); padding: 40px; max-width: 500px;
+  text-align: center; background: #111;
+}
+.gatebox h2 { color: var(--gold2); font-size: 2rem; margin-bottom: 12px; }
+.gatebox p { color: var(--silver); margin-bottom: 24px; }
+.btn {
+  display: inline-block; padding: 14px 24px; background: var(--gold);
+  color: #000; text-decoration: none; border: none; cursor: pointer;
+  margin: 5px; font-weight: bold; font-family: "Libre Baskerville", sans-serif;
+  font-size: 1rem;
+}
+.btn:hover { background: var(--gold2); }
+
+/* HERO */
+.hero { text-align: center; padding: 80px 20px; }
+.hero h1 { font-size: 3.5rem; color: var(--gold); line-height: 1.2; }
+.hero p { max-width: 700px; margin: 20px auto; color: var(--silver); line-height: 1.8; }
+.banner { font-size: 2rem; color: var(--gold2); margin-bottom: 20px; letter-spacing: 0.05em; }
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--gold);
+  padding: 25px;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card:hover { transform: translateY(-4px); }
+.card h3 { color: var(--gold2); font-size: 1.2rem; }
+.card p { color: var(--silver); font-size: 0.95rem; line-height: 1.6; flex: 1; }
+.card a {
+  display: block; text-align: center; margin-top: 10px;
+  padding: 14px; background: var(--gold); color: #000;
+  text-decoration: none; font-weight: bold;
+  border-radius: 4px; transition: background 0.2s;
+}
+.card a:hover { background: var(--gold2); }
+
+/* FOOTER */
+footer {
+  text-align: center; padding: 40px; color: var(--silver);
+  border-top: 1px solid rgba(197,164,109,0.3); margin-top: 40px;
+  line-height: 2;
+}
+footer a { color: var(--gold); text-decoration: none; font-weight: bold; }
+footer a:hover { color: var(--gold2); }
 </style>
 </head>
 <body>
 
+<!-- AGE GATE -->
 <div id="agegate">
-<div class="gatebox">
-<h2>18+ Only</h2>
-<p>This site contains gambling offers and affiliate links.</p>
-<button class="btn" onclick="document.getElementById('agegate').style.display='none'">Enter</button>
-<a class="btn" href="https://www.check-dein-spiel.de/">Leave</a>
-</div>
+  <div class="gatebox">
+    <h2>18+ Only</h2>
+    <p>This site contains gambling offers and affiliate links. Please confirm you are of legal age to continue.</p>
+    <button class="btn" onclick="document.getElementById('agegate').style.display='none'">I am 18+ – Enter</button>
+    <a class="btn" href="https://www.check-dein-spiel.de/">Leave</a>
+  </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-<div class="banner">NO RESERVATIONS AT DORSIA</div>
-<h1>Some doors stay closed.<br>These don't.</h1>
-<p>Eight casinos. Eight seats at the table. No waiting list. Exclusive bonus offers curated for players looking for premium experiences.</p>
-<a href="#offers" class="btn">View The Reservation List</a>
+  <div class="banner">NO RESERVATIONS AT DORSIA</div>
+  <h1>Some doors stay closed.<br>These don't.</h1>
+  <p>Exclusive casino bonus offers curated for players looking for premium experiences. No waiting list. No reservations.</p>
+  <a href="#offers" class="btn">View The Reservation List</a>
 </section>
 
+<!-- CASINO GRID – order matches screenshot 2 -->
 <section id="offers" class="grid">
 
-</p>
+  <div class="card">
+    <h3>VegasHero</h3>
+    <p>100% up to €500 + 200 Free Spins</p>
+    <a href="https://vgr.lynmonkel.com/?mid=346920_2185922&clickid=noreseservationsatdorsia-SB7409" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>BankonBet</h3>
+    <p>100% up to €300 + 100 Free Spins</p>
+    <a href="https://bnkw.monalvor.com/?mid=103181_2185911&clickid=noreseservationsatdorsia-SB7410" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Legiano</h3>
+    <p>150% up to €750</p>
+    <a href="https://lgno.monalvor.com/?mid=103181_2185912&clickid=noreseservationsatdorsia-SB7411" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>MyStake</h3>
+    <p>150% up to €500 + Freebet</p>
+    <a href="https://go.affiliatemystake.com/visit/?bta=3132393&nci=5664&afp=noreseservationsatdorsia-SB7412&utm_campaign=noreseservationsatdorsia" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Freshbet</h3>
+    <p>100% up to €500 + 100 Free Spins</p>
+    <a href="https://frm.lynmonkel.com/?mid=95901_2185907&clickid=noreseservationsatdorsia-SB7413" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Rabona</h3>
+    <p>100% up to €200 + Sports Freebet</p>
+    <a href="https://rbn.lynmonkel.com/?mid=51585_2185920&clickid=noreseservationsatdorsia-SB7414" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>DudeSpin</h3>
+    <p>100% up to €200 + 50 Free Spins</p>
+    <a href="https://ddspn.lynmonkel.com/?mid=95901_2185905&clickid=noreseservationsatdorsia-SB7415" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Rolletto</h3>
+    <p>100% up to €200 + 200 Free Spins</p>
+    <a href="https://track.rollettoaffiliate.com/visit/?bta=40731&brand=rolletto&afp=noreseservationsatdorsia-SB7416&utm_campaign=noreseservationsatdorsia" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Rocketbet</h3>
+    <p>100% up to €500</p>
+    <a href="https://rtb.lynnar.com/?mid=315090_2185913&clickid=noreseservationsatdorsia-SB7424" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Winstoria</h3>
+    <p>400% up to €15,000 + 400 Free Spins</p>
+    <a href="https://wstc.lynmonkel.com/?mid=335011_2185929&clickid=noreseservationsatdorsia-SB7419" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Locowin</h3>
+    <p>100% up to €2,000 + 200 Free Spins</p>
+    <a href="https://express-locowin.gofiliate.com/v2/text/441/1/9962711a-1331-11f1-9180-ba8ddcfac703/61?clickid=noreseservationsatdorsia-SB7420" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Betscore</h3>
+    <p>150% Free Bet up to €200</p>
+    <a href="https://bsr.lynmonkel.com/?mid=51585_2185918&clickid=noreseservationsatdorsia-SB7422" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Sportaza</h3>
+    <p>100% up to €250 + Sports Freebet</p>
+    <a href="https://socr.virelon.com/?mid=361838_2185928&clickid=noreseservationsatdorsia-SB7428" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Starzino</h3>
+    <p>200% up to €500 + 100 Free Spins</p>
+    <a href="https://stzns.lynmonkel.com/?mid=278079_2185923&clickid=noreseservationsatdorsia-SB7423" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Golisimo</h3>
+    <p>300% up to €2,500 + 300 Free Spins</p>
+    <a href="https://gls.lynnar.com/?mid=315090_2185915&clickid=noreseservationsatdorsia-SB7425" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>N1Bet</h3>
+    <p>100% up to €500 + 200 Free Spins</p>
+    <a href="https://n1betpartners.com/n1uiyzw1vn" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>IviBet</h3>
+    <p>100% up to €400 + 150 Free Spins</p>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=105088&bid=1478&lpid=46" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>GML Casino</h3>
+    <p>Exclusive Welcome Bonus</p>
+    <a href="https://gml-grp.com/C.ashx?btag=a_15841b_4176c_&affid=5117&siteid=15841&adid=4176&c=" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Casino Adrenaline</h3>
+    <p>200% on first deposit</p>
+    <a href="https://creatives.excelaffiliates.com/redirect.aspx?mid=5824&sid=1017404&cid=noreseservationsatdorsia&pid=noreseservationsatdorsia&affid=1014188" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Scored</h3>
+    <p>100% up to €1,000 + 100 Free Spins</p>
+    <a href="https://scd.kronvax.com/?mid=261198_2185926&clickid=noreseservationsatdorsia-SB7421" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
+
+  <div class="card">
+    <h3>Glorion</h3>
+    <p>100% up to €750 + 200 Free Spins</p>
+    <a href="https://glrn.lynmonkel.com/?mid=377264_2188662&clickid=noreseservationsatdorsia-SB7967" target="_blank" rel="noopener sponsored">Claim Bonus</a>
+  </div>
 
 </section>
 
-<div class="card"><h3>VegasHero</h3><p>100% up to €500 + 200 Free Spins</p><a class="btn" href="https://vgr.lynmonkel.com/?mid=346920_2185922&clickid=noreseservationsatdorsia-SB7409" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>BankonBet</h3><p>100% up to €300 + 100 Free Spins</p><a class="btn" href="https://bnkw.monalvor.com/?mid=103181_2185911&clickid=noreseservationsatdorsia-SB7410" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Legiano</h3><p>150% up to €750</p><a class="btn" href="https://lgno.monalvor.com/?mid=103181_2185912&clickid=noreseservationsatdorsia-SB7411" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>MyStake</h3><p>150% up to €500 + Freebet</p><a class="btn" href="https://go.affiliatemystake.com/visit/?bta=3132393&nci=5664&afp=noreseservationsatdorsia-SB7412&utm_campaign=noreseservationsatdorsia" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>DudeSpin</h3><p>100% up to €200 + 50 Free Spins</p><a class="btn" href="https://ddspn.lynmonkel.com/?mid=95901_2185905&clickid=noreseservationsatdorsia-SB7415" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>IviBet</h3><p>100% up to €400 + 150 Free Spins</p><a class="btn" href="https://mio.novarao.com/redirect.aspx?pid=105088&bid=1478&lpid=46" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Zoocer</h3><p>100% up to €350 + 100 Free Spins</p><a class="btn" href="https://socr.virelon.com/?mid=361838_2185928&clickid=noreseservationsatdorsia-SB7428" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Sportaza</h3><p>100% up to €250 + Sports Freebet</p><a class="btn" href="https://stzns.lynmonkel.com/?mid=278079_2185923&clickid=noreseservationsatdorsia-SB7423" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Glorion</h3><p>100% up to €750 + 200 Free Spins</p><a class="btn" href="https://glrn.lynmonkel.com/?mid=377264_2188662&clickid=noreseservationsatdorsia-SB7967" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Betscore</h3><p>150% Free Bet up to €200</p><a class="btn" href="https://bsr.lynmonkel.com/?mid=51585_2185918&clickid=noreseservationsatdorsia-SB7422" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Scored</h3><p>100% up to €1000 + 100 Free Spins</p><a class="btn" href="https://scd.kronvax.com/?mid=261198_2185926&clickid=noreseservationsatdorsia-SB7421" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Spinaura</h3><p>100% up to €2000 + 200 Free Spins</p><a class="btn" href="https://spinaura.media/n1edpz32xg" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Westace</h3><p>400% up to €15000 + 400 Free Spins</p><a class="btn" href="https://wstc.lynmonkel.com/?mid=335011_2185929&clickid=noreseservationsatdorsia-SB7419" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Golisimo</h3><p>300% up to €2500 + 300 Free Spins</p><a class="btn" href="https://gls.lynnar.com/?mid=315090_2185915&clickid=noreseservationsatdorsia-SB7425" target="_blank">Claim Bonus</a></div>
-
-<div class="card"><h3>Rolletto</h3><p>100% up to 200 Free Spins</p><a class="btn" href="https://track.rollettoaffiliate.com/visit/?bta=40731&brand=rolletto&afp=noreseservationsatdorsia-SB7416&utm_campaign=noreseservationsatdorsia" target="_blank">Claim Bonus</a></div>
-  
-</section>
-<section style="max-width:1200px;margin:60px auto;padding:20px;text-align:center;">
+<!-- FOOTER -->
 <footer>
-  
-<p>18+ Gamble Responsibly.</p>
-<p>This website contains affiliate links. Terms and conditions apply.</p>
-<p>© No Reservations At Dorsia</p>
-<p>📸 Follow me on Instagram:
-<a href="https://www.instagram.com/noreservationsatdorsia/"
-   target="_blank"
-   style="color:#c5a46d;text-decoration:none;font-weight:bold;">
-@noreservationsatdorsia
-</a>
-</p>
-
-<div style="margin-top:25px;">
-    <img src="logo.jpg"
-         alt="No Reservations At Dorsia Logo"
-         style="width:180px;height:auto;">
-</div>
+  <p>18+ | Gamble Responsibly.</p>
+  <p>This website contains affiliate links. Terms and conditions apply.</p>
+  <p>© No Reservations At Dorsia</p>
+  <p>Follow on Instagram:
+    <a href="https://www.instagram.com/noreservationsatdorsia/" target="_blank">@noreservationsatdorsia</a>
+  </p>
+  <div style="margin-top: 25px;">
+    <img src="logo.jpg" alt="No Reservations At Dorsia Logo" style="width: 180px; height: auto;">
+  </div>
 </footer>
-  
+
 </body>
-</div>
 </html>
